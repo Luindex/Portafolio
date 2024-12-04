@@ -12,6 +12,25 @@ export default {
           "100%": {opacity: 1, transform: "translateY(0)"},
         },
       },
+      colors: {
+        primary: {
+          DEFAULT: "#041C32", // Color principal
+          light: "#04293A", // Tono más claro
+          dark: "#064663", // Tono más oscuro
+        },
+        primary_hover: {
+          DEFAULT: "#052443",
+        },
+        h1Color: {
+          default: "#2563eb",
+        },
+        accent: {
+          DEFAULT: "#ECB365", // Color de acento
+        },
+      },
+      fontFamily: {
+        sans: ["Roboto", "sans-serif"],
+      },
     },
   },
   plugins: [],
