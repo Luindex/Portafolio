@@ -27,9 +27,13 @@ export default {
         accent: {
           DEFAULT: "#ECB365", // Color de acento
         },
+        textTitle: {
+          default: "rgba(0, 0, 0, 0.9) ",
+        },
       },
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
+        serif: ["Oleo Script", "system-ui"],
       },
     },
   },

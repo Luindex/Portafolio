@@ -20,9 +20,11 @@ const Nav = () => {
 
   return (
     <nav className="fixed top-0   left-0 w-full bg-primary bg-opacity-5 shadow-md z-50 backdrop-blur">
-      <div className="container  px-4 py-2 flex items-center justify-end">
+      <div className="container  px-4 py-2 flex items-center justify-between">
+        <div className=" pl-12 font-serif text-2xl text-textTitle-default">
+          Luindex {"</>"}{" "}
+        </div>
         <div className="flex items-center space-x-3 mr-6 my-1.5">
-          {/* Icono para Modo Oscuro */}
           <div className="relative">
             <button
               className="flex items-center  text-white px-2 py-2 rounded-lg shadow-md hover:bg-primary_hover focus:ring focus:ring-blue-500 transition-all duration-200"
