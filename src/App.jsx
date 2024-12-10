@@ -10,8 +10,42 @@ import {
   FaCss3Alt,
   FaJs,
   FaNodeJs,
+  FaCode,
+  FaDatabase,
+  FaLaptopCode,
 } from "react-icons/fa"
-import {SiTypescript, SiTailwindcss, SiVite} from "react-icons/si"
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiVite,
+  SiAxios,
+  SiZod,
+  SiRedux,
+} from "react-icons/si"
+import {RiNextjsFill} from "react-icons/ri"
+import ProjectCard from "./Components/ProjectCard"
+
+const projects = [
+  {
+    image: "https://via.placeholder.com/300x200", // Cambia por la URL de tu imagen
+    title: "Todo List App",
+    description:
+      "A simple and effective Todo List application to manage tasks and track progress.",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    liveLink: "https://your-todo-app.com", // URL del proyecto en vivo
+    repoLink: "https://github.com/your-github/todo-list", // URL del repositorio
+  },
+  {
+    image: "https://via.placeholder.com/300x200",
+    title: "E-commerce Website",
+    description:
+      "A responsive e-commerce platform with a modern UI and seamless shopping experience.",
+    technologies: ["Next.js", "Redux", "Tailwind CSS"],
+    liveLink: "https://your-ecommerce.com",
+    repoLink: "https://github.com/your-github/ecommerce-site",
+  },
+  // Agrega más proyectos aquí
+]
 
 function App() {
   const [mousePos, setMousePos] = useState({x: 0, y: 0})
@@ -61,7 +95,27 @@ function App() {
     {
       skill: "Vite",
       level: "Intermediate",
-      icon: <SiVite className="text" />,
+      icon: <SiVite className="text-sky-700" />,
+    },
+    {
+      skill: "Next js",
+      level: "Intermediate",
+      icon: <RiNextjsFill className=" text-gray-600" />,
+    },
+    {
+      skill: "Axios",
+      level: "Intermediate",
+      icon: <SiAxios className=" text-violet-800" />,
+    },
+    {
+      skill: "Zod",
+      level: "Intermediate",
+      icon: <SiZod className="text-sky-800" />,
+    },
+    {
+      skill: "Redux",
+      level: "Intermediate",
+      icon: <SiRedux className="text-indigo-700" />,
     },
   ]
 
@@ -77,7 +131,6 @@ function App() {
       <main className="flex-grow mt-20">
         <div className="container px-4 py-8 mx-auto max-w-6xl">
           <section className="mb-48">
-            {/* Profile Section */}
             <div className="relative w-40 h-40 mx-auto mb-12">
               <img
                 src={ImgProfile}
@@ -102,7 +155,7 @@ function App() {
                 TypeScript, and Tailwind CSS
               </p>
             </div>
-            {/* Social Links */}
+
             <div className="flex justify-center gap-6 mt-10">
               <button
                 className="flex items-center justify-center w-12 h-12 text-white bg-primary-dark rounded-full shadow-lg hover:bg-primary_hover transition-all focus:outline-none"
@@ -131,7 +184,6 @@ function App() {
               </button>
             </div>
 
-            {/* About Me Section */}
             <div className="flex justify-center items-center mt-32">
               <h1 className="font-bold font-sans text-2xl text-gray-400 mt-6 whitespace-nowrap">
                 About Me
@@ -146,13 +198,95 @@ function App() {
               </p>
             </div>
 
+            {/* Work Experience */}
+
+            <div className="flex flex-col items-center mt-32 mb-20">
+              <h1 className="font-bold font-sans text-2xl text-gray-400 mb-8 whitespace-nowrap">
+                Experience
+              </h1>
+
+              <div className="w-full max-w-4xl bg-inherit p-8 rounded-lg shadow-lg border border-gray-600">
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  In my stage as a Systems Engineering student I have developed
+                  academic and personal projects, where I focused more on
+                  Fronted and also a little of Fronted.
+                </p>
+
+                <ul className="mt-6 space-y-4 text-gray-400 text-base">
+                  <li className="flex items-center gap-3 text-xs">
+                    <span className="text-white">
+                      <FaReact />
+                    </span>
+                    Building responsive user interfaces with modern technologies
+                    like React and Tailwind CSS.
+                  </li>
+                  <li className="flex items-center gap-3 text-xs">
+                    <span className="text-white">
+                      <FaCode />
+                    </span>
+                    Writing clean, reusable, and maintainable code using
+                    TypeScript and JavaScript.
+                  </li>
+                  <li className="flex items-center gap-3 text-xs">
+                    <span className="text-white">
+                      <FaDatabase />
+                    </span>
+                    Designing and managing data structures with SQL and
+                    implementing seamless integrations with APIs.
+                  </li>
+                  <li className="flex items-center gap-3 text-xs">
+                    <span className="text-white">
+                      <FaLaptopCode />
+                    </span>
+                    Collaborating in multidisciplinary teams to deliver creative
+                    and functional solutions.
+                  </li>
+                </ul>
+
+                <p className="text-gray-400 text-sm leading-relaxed mt-6">
+                  These experiences have shaped my ability to adapt to new
+                  challenges, solve problems, and continuously improve as a
+                  developer.
+                </p>
+              </div>
+            </div>
+
+            {/* Proyectos */}
+
+            <div className=" bg-primary-dark ">
+              {/* Código existente */}
+              <main className="">
+                <div className="container px-4 py-1 max-w-6xl">
+                  {/* Sección de Proyectos */}
+                  <section className="">
+                    <h1 className="font-bold font-sans text-2xl text-gray-400 text-center mb-12">
+                      Projects
+                    </h1>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {projects.map((project, index) => (
+                        <ProjectCard
+                          key={index}
+                          image={project.image}
+                          title={project.title}
+                          description={project.description}
+                          technologies={project.technologies}
+                          liveLink={project.liveLink}
+                          repoLink={project.repoLink}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                </div>
+              </main>
+            </div>
+
             {/* Skills Section */}
             <div className="flex justify-center items-center mt-32">
               <h1 className="font-bold font-sans text-2xl text-gray-400 mt-6 whitespace-nowrap">
                 Skills
               </h1>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
               {skills.map(({skill, level, icon}, idx) => (
                 <div
                   key={idx}
