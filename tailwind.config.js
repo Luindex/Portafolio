@@ -18,6 +18,11 @@ export default {
           light: "#04293A", // Tono más claro
           dark: "#064663", // Tono más oscuro
         },
+
+        blackBase: {
+          DEFAULT: "#000000",
+        },
+
         primary_hover: {
           DEFAULT: "#052443",
         },

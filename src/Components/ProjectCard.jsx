@@ -10,7 +10,7 @@ const ProjectCard = ({
   repoLink,
 }) => {
   return (
-    <div className="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+    <div className=" border border-gray-600 bg-blackBase p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
       <img
         src={image}
         alt={title}
@@ -24,28 +24,28 @@ const ProjectCard = ({
         {technologies.map((tech, index) => (
           <span
             key={index}
-            className="bg-gray-700 text-gray-300 px-3 py-1 text-xs rounded-full"
+            className="bg-gray-700 hover:bg-gray-600 cursor-pointer transition-all text-gray-300 px-3 py-1 text-xs rounded-full"
           >
             {tech}
           </span>
         ))}
       </div>
-      <div className="flex justify-between items-center">
-        <a
-          href={liveLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm text-teal-400 hover:underline"
-        >
-          <FaExternalLinkAlt /> Live Demo
-        </a>
+      <div className="flex justify-end gap-6 items-center">
         <a
           href={repoLink}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm text-teal-400 hover:underline"
         >
-          <FaGithub /> GitHub
+          <FaGithub className=" text-gray-100 text-xl hover:text-gray-50  transition-transform transform hover:scale-110 " />
+        </a>
+        <a
+          href={liveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-sm text-teal-400 hover:underline"
+        >
+          <FaExternalLinkAlt className=" text-gray-100 text-lg hover:text-gray-50  transition-transform transform hover:scale-110 " />
         </a>
       </div>
     </div>

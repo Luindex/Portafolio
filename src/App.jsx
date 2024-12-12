@@ -24,26 +24,68 @@ import {
 } from "react-icons/si"
 import {RiNextjsFill} from "react-icons/ri"
 import ProjectCard from "./Components/ProjectCard"
+import todoImg from "../public/TodoApp.jpg"
+import Coktail from "../public/Coktail.jpg"
+import Cripto from "../public/Cripto.jpg"
+import clima from "../public/Clima.jpg"
+import Veterinarian from "../public/Veterinaria.jpg"
 
 const projects = [
   {
-    image: "https://via.placeholder.com/300x200", // Cambia por la URL de tu imagen
+    image: todoImg, // Cambia por la URL de tu imagen
     title: "Todo List App",
     description:
-      "A simple and effective Todo List application to manage tasks and track progress.",
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-    liveLink: "https://your-todo-app.com", // URL del proyecto en vivo
-    repoLink: "https://github.com/your-github/todo-list", // URL del repositorio
+      "This is a to-do list project developed with React, TypeScript and Vite. The app allows users to add, edit, delete, and mark tasks as completed, as well as filter tasks based on their status.",
+    technologies: ["React", "TypeScript", "Tailwind Css"],
+    liveLink: "https://illustrious-gnome-0e5d7c.netlify.app/", // URL del proyecto en vivo
+    repoLink: "https://github.com/Luindex/Todo-List", // URL del repositorio
   },
   {
-    image: "https://via.placeholder.com/300x200",
-    title: "E-commerce Website",
+    image: Coktail,
+    title: "Beverage Search",
+    description:
+      "drinks react is a web application developed with react and typescript that allows users to search for drinks by ingredient and category, as well as save their favorite drinks",
+    technologies: ["React", "Redux", "Zod", "Zustand", "React-Router"],
+    liveLink: "https://splendid-concha-154198.netlify.app/",
+    repoLink: "https://github.com/Luindex/Bebidas-React-TypeScript",
+  },
+  {
+    image: Cripto,
+    title: "Cripto React",
+    description:
+      "Cryptocurrency is an application developed with React and TypeScript that allows users to check the value of a cryptocurrency depending on the currency you choose.",
+    technologies: ["React", "Redux", "Tailwind", "Axios", "Zustand", "Zod"],
+    liveLink: "https://melodious-bublanina-f4baad.netlify.app/",
+    repoLink: "https://github.com/Luindex/CriptoReacTypescript",
+  },
+  {
+    image: clima,
+    title: "Weather Forecast",
+    description:
+      "This project is a climate status consultant developed using React, TypeScript and Zod. It provides a simple interface for users to enter the location and get updated information about the weather in that area.",
+    technologies: ["React", "Redux", "Typescript", "Tailwind CSS", "Zod"],
+    liveLink: "https://melodic-blini-20c2fd.netlify.app/",
+    repoLink: "https://github.com/Luindex/Clima-React-TypeScript",
+  },
+  {
+    image: Veterinarian,
+    title: "Pet Veterinarian",
+    description:
+      "This is a web application developed with React and Tailwind CSS, designed to facilitate pet-related queries. The main objective is to provide pet owners with a quick and easy tool to manage and consult information.",
+    technologies: ["React", "Tailwind CSS"],
+    liveLink: "https://stellar-mochi-ae943c.netlify.app/",
+    repoLink: "https://github.com/Luindex/Veterinaria-Pet",
+  },
+  {
+    image: "https://via.placeholder.com/300x200", ///todo
+    title: "Porfolio",
     description:
       "A responsive e-commerce platform with a modern UI and seamless shopping experience.",
-    technologies: ["Next.js", "Redux", "Tailwind CSS"],
-    liveLink: "https://your-ecommerce.com",
-    repoLink: "https://github.com/your-github/ecommerce-site",
+    technologies: ["React", "Vite", "Tailwind CSS"],
+    liveLink: "",
+    repoLink: "https://github.com/Luindex/Portafolio",
   },
+
   // Agrega más proyectos aquí
 ]
 
@@ -253,7 +295,7 @@ function App() {
 
             {/* Proyectos */}
 
-            <div className=" bg-primary-dark ">
+            <div className=" bg-transparent ">
               {/* Código existente */}
               <main className="">
                 <div className="container px-4 py-1 max-w-6xl">
@@ -262,7 +304,7 @@ function App() {
                     <h1 className="font-bold font-sans text-2xl text-gray-400 text-center mb-12">
                       Projects
                     </h1>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-8">
                       {projects.map((project, index) => (
                         <ProjectCard
                           key={index}
