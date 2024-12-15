@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -15,12 +16,20 @@ export default {
       colors: {
         primary: {
           DEFAULT: "#041C32", // Color principal
-          light: "#04293A", // Tono más claro
-          dark: "#064663", // Tono más oscuro
+          light: "#F4F6FF", // Tono más claro
+          dark: "#001C30", // Tono más oscuro
         },
 
+        lgnav: {
+          DEFAULT: "#10375C",
+        },
+
+        h1lg: {
+          DEFAULT: "#EB8317",
+          hover: "#f68a19",
+        },
         blackBase: {
-          DEFAULT: "#000000",
+          DEFAULT: "#176B87",
         },
 
         primary_hover: {
