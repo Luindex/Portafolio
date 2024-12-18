@@ -1,6 +1,6 @@
 import {useState, useEffect} from "react"
 import {MoonIcon, SunIcon, LanguageIcon} from "@heroicons/react/24/outline"
-import {GrDocumentUser} from "react-icons/gr"
+import {GrDocumentDownload} from "react-icons/gr"
 
 const Nav = () => {
   const [darkMode, setDarkMode] = useState("dark")
@@ -33,12 +33,48 @@ const Nav = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full dark:bg-opacity-5 shadow-md z-50 backdrop-blur">
-      <div className="container px-4 py-2 flex items-center justify-end">
+      <div className=" px-4 py-2 mr-12 flex justify-between ">
+        <div className="px-4 py-2 flex items-center justify-end">
+          <ul className="flex items-center space-x-4">
+            <li>
+              <button
+                onClick={() => handleNavigation("info")}
+                className="text-white px-2 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+              >
+                About
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavigation("skills")}
+                className="text-white px-2 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+              >
+                Skills
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavigation("projects")}
+                className="text-white px-2 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+              >
+                Projects
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleNavigation("contact")}
+                className="text-white px-2 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+              >
+                Contact
+              </button>
+            </li>
+          </ul>
+        </div>
         <div className="flex items-center space-x-3 mr-6 my-1.5">
           {/* Menú Dark Mode */}
           <div className="relative">
             <button
-              className="flex items-center text-white px-2 py-2 rounded-lg shadow-md dark:hover:bg-primary_hover hover:bg-gray-200 focus:ring focus:ring-lgnav dark:focus:ring-blue-600  transition-all duration-200"
+              className="flex items-center text-white px-2 py-2 rounded-lg shadow-md dark:hover:bg-primary_hover ease-in-out delay-150 hover:-translate-y-1 scale-110 transition hover:bg-gray-200 focus:ring focus:ring-lgnav dark:focus:ring-blue-600  duration-200"
               onClick={() =>
                 setActiveMenu((prev) => (prev === "darkMode" ? "" : "darkMode"))
               }
@@ -53,21 +89,21 @@ const Nav = () => {
             </button>
 
             {activeMenu === "darkMode" && (
-              <div className="absolute top-8 right-0 text-lgnav bg-primary-light dark:bg-primary-dark dark:text-gray-300 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg py-1 animate-fadeIn">
+              <div className="absolute top-10 right-0 text-lgnav bg-primary-light dark:bg-transparent dark:text-gray-300 border border-gray-200  dark:border-gray-600 rounded-lg shadow-lg py-1 animate-fadeIn">
                 <div
-                  className="px-4 py-2  cursor-pointer dark:hover:bg-primary_hover transition-all"
+                  className="px-4 py-2  cursor-pointer "
                   onClick={() => toggleDarkMode("light")}
                 >
                   Light
                 </div>
                 <div
-                  className="px-4 py-2 cursor-pointer dark:hover:bg-primary_hover transition-all"
+                  className="px-4 py-2 cursor-pointer  "
                   onClick={() => toggleDarkMode("dark")}
                 >
                   Dark
                 </div>
                 <div
-                  className="px-4 py-2 cursor-pointer dark:hover:bg-primary_hover transition-all"
+                  className="px-4 py-2 cursor-pointer "
                   onClick={() => toggleDarkMode("system")}
                 >
                   System
@@ -78,7 +114,7 @@ const Nav = () => {
 
           <div className="relative">
             <button
-              className="flex items-center text-white px-2 py-2 rounded-lg shadow-md dark:hover:bg-primary_hover hover:bg-gray-200 focus:ring focus:ring-lgnav dark:focus:ring-blue-600 transition-all duration-200"
+              className="flex items-center text-white px-2 py-2 rounded-lg shadow-md dark:hover:bg-primary_hover ease-in-out delay-150 hover:-translate-y-1 scale-110 transition hover:bg-gray-200 focus:ring focus:ring-lgnav dark:focus:ring-blue-600  duration-200"
               onClick={() =>
                 setActiveMenu((prev) => (prev === "language" ? "" : "language"))
               }
@@ -86,15 +122,15 @@ const Nav = () => {
               <LanguageIcon className="w-5 h-5 dark:text-white text-lgnav" />
             </button>
             {activeMenu === "language" && (
-              <div className="absolute top-8 right-0 bg-primary-light text-lgnav border-gray-200  dark:bg-primary-dark dark:text-gray-300 border dark:border-gray-600 rounded-lg shadow-lg py-1 animate-fadeIn">
+              <div className="absolute top-10 right-0 bg-primary-light text-lgnav border-gray-200  dark:bg-transparent dark:text-gray-300 border dark:border-gray-600 rounded-lg shadow-lg py-1 animate-fadeIn">
                 <div
-                  className="px-4 py-2 cursor-pointer dark:hover:bg-primary_hover transition-all "
+                  className="px-4 py-2 cursor-pointer   "
                   onClick={() => changeLanguage("es")}
                 >
                   Español
                 </div>
                 <div
-                  className="px-4 py-2 cursor-pointer dark:hover:bg-primary_hover transition-all "
+                  className="px-4 py-2 cursor-pointer   "
                   onClick={() => changeLanguage("en")}
                 >
                   English
@@ -104,10 +140,11 @@ const Nav = () => {
           </div>
 
           <button
-            className="flex items-center text-white px-2 py-2 rounded-lg shadow-md dark:hover:bg-primary_hover hover:bg-gray-200 focus:ring focus:ring-blue-500 transition-all duration-200"
+            className="flex items-center gap-x-1 text-white px-2 py-2 rounded-lg shadow-md ease-in-out delay-150 hover:-translate-y-1 dark:bg-btnNav-default dark:hover:bg-btnNav-hover scale-110 transition focus:ring   duration-200"
             onClick={() => window.open("/mi-cv.pdf", "_blank")}
           >
-            <GrDocumentUser className="w-4 h-4 dark:text-white text-lgnav " />
+            <GrDocumentDownload className="w-4 h-4 text-black  font-Sutittle font-bold transition " />
+            <span className=" text-black font-bold  text-xs">CV</span>
           </button>
         </div>
       </div>

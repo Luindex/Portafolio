@@ -17,11 +17,29 @@ export default {
         primary: {
           DEFAULT: "#041C32", // Color principal
           light: "#F4F6FF", // Tono más claro
-          dark: "#001C30", // Tono más oscuro
+          dark: "rgb(3 12 18)", // Tono más oscuro
         },
 
         lgnav: {
           DEFAULT: "#10375C",
+        },
+
+        btnNav: {
+          default: " rgb(250 204 21 / var(--tw-text-opacity))",
+          hover: "rgb(207 166 0)",
+        },
+
+        exph1: {
+          default: "rgb(254 240 138 / var(--tw-text-opacity))",
+        },
+
+        techColors: {
+          html: "#f16524",
+          css: "rgb(33 103 179)",
+          js: "rgb(250 204 21 / var(--tw-text-opacity))",
+          react: "rgb(88 196 220)",
+          twlcss: "rgb(56 189 248)",
+          vite: "#ffd52d",
         },
 
         h1lg: {
@@ -47,7 +65,8 @@ export default {
       },
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
-        serif: ["Oleo Script", "system-ui"],
+        Sutittle: ["Press Start 2P", "system-ui"],
+        second: ["Onest", "sans-serif"],
       },
     },
   },
