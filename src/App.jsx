@@ -25,7 +25,6 @@ import Cripto from "../public/Cripto.jpg"
 import clima from "../public/Clima.jpg"
 import Portafolio from "../public/Portafolio.jpg"
 import Veterinarian from "../public/Veterinaria.jpg"
-import {EnvelopeIcon, PhoneIcon} from "@heroicons/react/24/outline"
 import {useEffect, useState} from "react"
 import {FiGithub} from "react-icons/fi"
 import {LuLinkedin} from "react-icons/lu"
@@ -36,6 +35,7 @@ import {VscTools} from "react-icons/vsc"
 
 const projects = [
   {
+    id: "",
     image: todoImg, // Cambia por la URL de tu imagen
     title: "Todo List App",
     description:
@@ -45,6 +45,7 @@ const projects = [
     repoLink: "https://github.com/Luindex/Todo-List", // URL del repositorio
   },
   {
+    id: "",
     image: Coktail,
     title: "Beverage Search",
     description:
@@ -54,6 +55,7 @@ const projects = [
     repoLink: "https://github.com/Luindex/Bebidas-React-TypeScript",
   },
   {
+    id: "",
     image: Cripto,
     title: "Cripto React",
     description:
@@ -63,6 +65,7 @@ const projects = [
     repoLink: "https://github.com/Luindex/CriptoReacTypescript",
   },
   {
+    id: "",
     image: clima,
     title: "Weather Forecast",
     description:
@@ -82,6 +85,7 @@ const projects = [
     repoLink: "https://github.com/Luindex/Veterinaria-Pet",
   },
   {
+    id: "",
     image: Portafolio,
     title: "Portfolio",
     description:
@@ -159,21 +163,21 @@ function App() {
     },
   ]
 
-  const fullText = "Frontend Developer" // Texto completo a escribir
-  const [typedText, setTypedText] = useState("") // Estado para el texto animado
-  const [index, setIndex] = useState(0) // Posición en el texto
-  const [isTypingComplete, setIsTypingComplete] = useState(false) // Controla si terminó de escribir
+  const fullText = "Frontend Developer"
+  const [typedText, setTypedText] = useState("")
+  const [index, setIndex] = useState(0)
+  const [isTypingComplete, setIsTypingComplete] = useState(false)
 
   useEffect(() => {
     if (index < fullText.length) {
       const timer = setTimeout(() => {
-        setTypedText((prev) => prev + fullText[index]) // Añade la siguiente letra
-        setIndex((prev) => prev + 1) // Incrementa posición
-      }, 40) // Velocidad del tipeo
+        setTypedText((prev) => prev + fullText[index])
+        setIndex((prev) => prev + 1)
+      }, 40)
 
-      return () => clearTimeout(timer) // Limpia el timer
+      return () => clearTimeout(timer)
     } else {
-      setIsTypingComplete(true) // Marca como completo
+      setIsTypingComplete(true)
     }
   }, [index, fullText])
 
@@ -242,12 +246,9 @@ function App() {
             </div>
           </section>
 
-          <section>
+          <section id="about">
             <div className="flex justify-center items-center mt-32">
-              <h1
-                id="about"
-                className="font-bold  font-second  dark:text-btnNav-default text-3xl  text-h1lg mt-6 whitespace-nowrap"
-              >
+              <h1 className="font-bold  font-second  dark:text-btnNav-default text-3xl  text-h1lg mt-6 whitespace-nowrap">
                 About Me
               </h1>
             </div>
@@ -272,7 +273,10 @@ function App() {
           </section>
 
           {/* Work Experience */}
-          <section className="flex flex-col  items-center mt-32 mb-20">
+          <section
+            id="Experience"
+            className="flex flex-col  items-center mt-32 mb-20"
+          >
             <h1 className="font-bold font-sans text-3xl dark:text-btnNav-default text-h1lg mb-8 whitespace-nowrap">
               Experience
             </h1>
@@ -351,11 +355,11 @@ function App() {
             </div>
           </section>
 
-          <section>
+          <section id="projects">
             <div className=" bg-transparent ">
               <main className="">
                 <div className="container px-4 py-1 max-w-6xl">
-                  <section className="">
+                  <section>
                     <h1 className="font-bold font-second dark:text-btnNav-default text-3xl  text-h1lg text-center mb-12">
                       Projects
                     </h1>
@@ -378,43 +382,45 @@ function App() {
             </div>
           </section>
 
-          <div className="mt-16 text-center">
-            <h2 className="font-bold font-sans text-3xl dark:text-gray-400 text-h1lg mt-6 mb-40 whitespace-nowrap">
+          <div className="mt-16 text-center " id="contact">
+            <h2 className="font-bold  text-3xl dark:text-btnNav-default font-second text-h1lg mt-6 mb-10 whitespace-nowrap">
               Contact
             </h2>
-            <section>
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-                {/* Correo Electrónico */}
-                <a
-                  href="mailto:rodriguesluis414@gmail.com"
-                  className="flex items-center gap-4 bg-transparent p-4 rounded-lg shadow-md border border-gray-700  w-64 h-28"
-                >
-                  <EnvelopeIcon className="w-8 h-8 dark:text-white text-h1lg" />
-                  <div>
-                    <h3 className="text-lg font-semibold dark:text-white text-lgnav text-start">
-                      Email
-                    </h3>
-                    <p className="dark:text-white text-lgnav text-sm">
-                      rodriguesluis414@gmail.com
-                    </p>
-                  </div>
-                </a>
+            <section id="contact" class="py-12">
+              <div class="container mx-auto px-4">
+                <div class="max-w-md mx-auto bg-white dark:bg-transparent p-8 rounded-lg shadow-lg">
+                  <div class="space-y-4 text-center">
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-300">
+                        Correo Electrónico
+                      </h3>
+                      <a
+                        href="mailto:tuemail@gmail.com"
+                        class="text-blue-500 hover:underline text-lg font-medium"
+                      >
+                        rodriguesluis414@gmail.com
+                      </a>
+                    </div>
 
-                {/* Número Telefónico */}
-                <a
-                  href="tel:+3188413911"
-                  className="flex items-center gap-4 bg-transparent p-4 rounded-lg shadow-md border border-gray-700 w-64 h-28"
-                >
-                  <PhoneIcon className="w-8 h-8 dark:text-white text-h1lg" />
-                  <div>
-                    <h3 className="text-lg font-semibold dark:text-white text-lgnav text-start">
-                      Phone
-                    </h3>
-                    <p className="dark:text-white text-lgnav text-sm">
-                      +57 318-841-3911
-                    </p>
+                    <div>
+                      <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-300">
+                        Teléfono
+                      </h3>
+                      <div class="flex items-center justify-center space-x-2">
+                        <span class="w-6 h-4 overflow-hidden rounded-sm">
+                          <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg"
+                            alt="Bandera de Colombia"
+                            class="object-cover"
+                          />
+                        </span>
+                        <a class="text-gray-800 dark:text-gray-200 font-medium">
+                          +57 318 841 3911
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </a>
+                </div>
               </div>
             </section>
           </div>

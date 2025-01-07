@@ -36,37 +36,42 @@ const Nav = () => {
       <div className=" px-4 py-2 mr-12 flex justify-between ">
         <div className="px-4 py-2 flex items-center justify-end">
           <ul className="flex items-center space-x-4">
+            <a
+              href="#"
+              className="text-white font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="text-white font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
+            >
+              About
+            </a>
+
             <li>
-              <button
-                onClick={() => handleNavigation("info")}
-                className="text-white px-2 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+              <a
+                href="#Experience"
+                className="text-white font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
               >
-                About
-              </button>
+                Experience
+              </a>
             </li>
             <li>
-              <button
-                onClick={() => handleNavigation("skills")}
-                className="text-white px-2 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
-              >
-                Skills
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={() => handleNavigation("projects")}
-                className="text-white px-2 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+              <a
+                href="#projects"
+                className="text-white font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
               >
                 Projects
-              </button>
+              </a>
             </li>
             <li>
-              <button
-                onClick={() => handleNavigation("contact")}
-                className="text-white px-2 py-1 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700"
+              <a
+                href="#contact"
+                className="text-white font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
               >
                 Contact
-              </button>
+              </a>
             </li>
           </ul>
         </div>
