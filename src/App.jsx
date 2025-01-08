@@ -1,23 +1,8 @@
 import Nav from "./Components/Nav"
 import ImgProfile from "../public/ImgProfile.jpg"
-import {
-  FaReact,
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaNodeJs,
-  FaCss3,
-} from "react-icons/fa"
-import {
-  SiTypescript,
-  SiTailwindcss,
-  SiVite,
-  SiAxios,
-  SiZod,
-  SiRedux,
-  SiNextdotjs,
-} from "react-icons/si"
-import {RiNextjsFill, RiTailwindCssFill} from "react-icons/ri"
+import {FaReact, FaHtml5, FaJs, FaCss3} from "react-icons/fa"
+import {SiTypescript, SiVite, SiZod, SiRedux, SiNextdotjs} from "react-icons/si"
+import {RiTailwindCssFill} from "react-icons/ri"
 import ProjectCard from "./Components/ProjectCard"
 import todoImg from "../public/TodoApp.jpg"
 import Coktail from "../public/Coktail.jpg"
@@ -31,21 +16,21 @@ import {LuLinkedin} from "react-icons/lu"
 import {GrDocumentUser} from "react-icons/gr"
 import {PiStudent} from "react-icons/pi"
 import {TbDeviceDesktopCode} from "react-icons/tb"
+import {pEN} from "./translations/en/global"
+import {pES} from "./translations/es/globalES"
 import {VscTools} from "react-icons/vsc"
 
-const projects = [
+let projects = [
   {
-    id: "",
     image: todoImg, // Cambia por la URL de tu imagen
     title: "Todo List App",
     description:
-      "This is a to-do list project developed with React, TypeScript and Vite. The app allows users to add, edit, delete, and mark tasks as completed, as well as filter tasks based on their status.",
+      "This is a todo list project developed with React, TypeScript and Vite. The application allows users to add, edit, delete and mark tasks as completed, as well as filter tasks by their status.",
     technologies: ["React", "TypeScript", "Tailwind Css"],
-    liveLink: "https://illustrious-gnome-0e5d7c.netlify.app/", // URL del proyecto en vivo
-    repoLink: "https://github.com/Luindex/Todo-List", // URL del repositorio
+    liveLink: "https://illustrious-gnome-0e5d7c.netlify.app/",
+    repoLink: "https://github.com/Luindex/Todo-List",
   },
   {
-    id: "",
     image: Coktail,
     title: "Beverage Search",
     description:
@@ -55,7 +40,6 @@ const projects = [
     repoLink: "https://github.com/Luindex/Bebidas-React-TypeScript",
   },
   {
-    id: "",
     image: Cripto,
     title: "Cripto React",
     description:
@@ -65,7 +49,6 @@ const projects = [
     repoLink: "https://github.com/Luindex/CriptoReacTypescript",
   },
   {
-    id: "",
     image: clima,
     title: "Weather Forecast",
     description:
@@ -75,7 +58,6 @@ const projects = [
     repoLink: "https://github.com/Luindex/Clima-React-TypeScript",
   },
   {
-    id: "#pet",
     image: Veterinarian,
     title: "Pet Veterinarian",
     description:
@@ -85,7 +67,6 @@ const projects = [
     repoLink: "https://github.com/Luindex/Veterinaria-Pet",
   },
   {
-    id: "",
     image: Portafolio,
     title: "Portfolio",
     description:
@@ -99,69 +80,7 @@ const projects = [
 ]
 
 function App() {
-  // Skills data
-  const skills = [
-    {
-      skill: "React",
-      level: "Advanced",
-      icon: <FaReact className="text-blue-500" />,
-    },
-    {
-      skill: "TypeScript",
-      level: "Intermediate",
-      icon: <SiTypescript className="text-blue-600" />,
-    },
-    {
-      skill: "Tailwind CSS",
-      level: "Advanced",
-      icon: <SiTailwindcss className="text-teal-400" />,
-    },
-    {
-      skill: "JavaScript",
-      level: "Advanced",
-      icon: <FaJs className="text-yellow-400" />,
-    },
-    {
-      skill: "HTML5",
-      level: "Expert",
-      icon: <FaHtml5 className="text-orange-600" />,
-    },
-    {
-      skill: "CSS3",
-      level: "Expert",
-      icon: <FaCss3Alt className="text-blue-400" />,
-    },
-    {
-      skill: "Node.js",
-      level: "Intermediate",
-      icon: <FaNodeJs className="text-green-500" />,
-    },
-    {
-      skill: "Vite",
-      level: "Intermediate",
-      icon: <SiVite className="text-sky-700" />,
-    },
-    {
-      skill: "Next js",
-      level: "Intermediate",
-      icon: <RiNextjsFill className=" text-slate-900 dark:text-white" />,
-    },
-    {
-      skill: "Axios",
-      level: "Intermediate",
-      icon: <SiAxios className=" text-violet-800" />,
-    },
-    {
-      skill: "Zod",
-      level: "Intermediate",
-      icon: <SiZod className="text-sky-800" />,
-    },
-    {
-      skill: "Redux",
-      level: "Intermediate",
-      icon: <SiRedux className="text-indigo-700" />,
-    },
-  ]
+  const [language, setLanguage] = useState("en")
 
   const fullText = "Frontend Developer"
   const [typedText, setTypedText] = useState("")
@@ -185,41 +104,40 @@ function App() {
     <div
       className="relative min-h-screen w-full  
       bg-gradient-to-r dark:from-slate-900 dark:via-black dark:to-slate-900
+       from-slate-50 via-indigo-100 to-slate-50
       bg-[length:150%_100%] bg-[40%_0%] dark:bg-black overflow-auto "
     >
-      <Nav />
+      <Nav language={language} setLanguage={setLanguage} />
       <main className="flex-grow mt-20">
         <div className="container px-4 py-8 mx-auto max-w-6xl">
           <section id="info" className="">
             <img
               src={ImgProfile}
               alt="Profile Picture"
-              className="rounded-full shadow-lg border-4 w-40 h-40 mx-auto mb-2 dark:border-gray-400 border-lgnav"
+              className="rounded-full shadow-lg border-4 w-40 h-40 mx-auto mb-2 dark:border-gray-400 border-black"
             />
             <div className="flex justify-center items-center">
-              <h1 className="font-bold  text-4xl font-second  dark:text-white text-lgnav mt-6 whitespace-nowrap">
+              <h1 className="font-bold  text-4xl font-second  dark:text-white text-black mt-6 whitespace-nowrap">
                 Luis Rodriguez
               </h1>
             </div>
 
             <div className="flex justify-center items-center">
-              <h1 className="font-bold  text-2xl font-mono  dark:text-btnNav-default text-h1lg mt-1 whitespace-nowrap">
+              <h1 className="font-bold  text-2xl font-mono dark:text-btnNav-default text-h1lg mt-1 whitespace-nowrap">
                 {typedText}
                 {/* Cursor visible solo mientras está escribiendo */}
                 {!isTypingComplete && <span className="animate-pulse">|</span>}
               </h1>
             </div>
             <div className="flex justify-center mt-10">
-              <p className="dark:text-yellow-50 text-lgnav font-second font-normal  text-lg max-w-2xl text-center leading-relaxed">
-                Frontend Developer specializing in building modern, functional,
-                and responsive web interfaces using technologies like React,
-                TypeScript, and Tailwind CSS
+              <p className="dark:text-yellow-50 text-black font-second font-normal  text-lg max-w-2xl text-center leading-relaxed">
+                {language === "en" ? pEN.des : pES.des}
               </p>
             </div>
 
             <div className="flex justify-center gap-6 mt-10">
               <button
-                className="flex items-center  justify-center w-12 h-12 dark:text-white ease-in-out delay-150 hover:-translate-y-1 text-lgnav dark:bg-primary-dark bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-primary_hover transition-all focus:outline-none"
+                className="flex items-center  justify-center w-12 h-12 dark:text-white ease-in-out delay-150 hover:-translate-y-1 text-black dark:bg-slate-900 bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-slate-800 transition-all focus:outline-none"
                 onClick={() =>
                   window.open(
                     "https://www.linkedin.com/in/luis-carlos-rodrigues-111163252/",
@@ -230,7 +148,7 @@ function App() {
                 <LuLinkedin className="text-xl" />
               </button>
               <button
-                className="flex items-center justify-center w-12 h-12 ease-in-out delay-150 hover:-translate-y-1 dark:text-white text-lgnav dark:bg-primary-dark bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-primary_hover transition-all focus:outline-none"
+                className="flex items-center justify-center w-12 h-12 ease-in-out delay-150 hover:-translate-y-1 dark:text-white text-black dark:bg-slate-900 bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-slate-800  transition-all focus:outline-none"
                 onClick={() =>
                   window.open("https://github.com/Luindex", "_blank")
                 }
@@ -238,7 +156,7 @@ function App() {
                 <FiGithub className="text-xl" />
               </button>
               <button
-                className="flex items-center justify-center w-12 h-12 ease-in-out delay-150 hover:-translate-y-1 dark:text-white text-lgnav dark:bg-primary-dark bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-primary_hover transition-all focus:outline-none"
+                className="flex items-center justify-center w-12 h-12 ease-in-out delay-150 hover:-translate-y-1 dark:text-white text-black dark:bg-slate-900 bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-slate-800  transition-all focus:outline-none"
                 onClick={() => window.open("/path-to-your-cv.pdf", "_blank")} //todo
               >
                 <GrDocumentUser className="text-xl" />
@@ -249,25 +167,17 @@ function App() {
           <section id="about">
             <div className="flex justify-center items-center mt-32">
               <h1 className="font-bold  font-second  dark:text-btnNav-default text-3xl  text-h1lg mt-6 whitespace-nowrap">
-                About Me
+                {language === "en" ? pEN.about_me : pES.acerda_de}
               </h1>
             </div>
             <div className="justify-center mt-10 flex flex-col items-center">
-              <p className="dark:text-white text-lgnav font-second font-light text-md max-w-2xl text-center leading-relaxed">
-                Hello, I am Luis Carlos Rodriguez, I live in Medellin Colombia ,
-                I am a Systems Engineering student. I like design and
-                programming. Outside of the Studio, I enjoy exploring design,
-                technology and the infinite possibilities they bring to life.
+              <p className="dark:text-white text-black font-second font-light text-md max-w-2xl text-center leading-relaxed">
+                {language === "en" ? pEN.about_me1 : pES.acerda_de1}
               </p>
 
-              <p className="dark:text-white text-lgnav font-second font-light text-md mt-4 max-w-2xl text-center leading-relaxed">
+              <p className="dark:text-white text-black font-second font-light text-md mt-4 max-w-2xl text-center leading-relaxed">
                 {" "}
-                As a frontend developer, I specialize in creating intuitive,
-                responsive and visually appealing web applications. I work with
-                modern tools like React, TypeScript, and Tailwind CSS to create
-                seamless user experiences. I pride myself on writing clean,
-                maintainable code and transforming ideas into beautiful,
-                functional interfaces that users love to interact with
+                {language === "en" ? pEN.about_me2 : pES.acerda_de2}
               </p>
             </div>
           </section>
@@ -277,20 +187,18 @@ function App() {
             id="Experience"
             className="flex flex-col  items-center mt-32 mb-20"
           >
-            <h1 className="font-bold font-sans text-3xl dark:text-btnNav-default text-h1lg mb-8 whitespace-nowrap">
-              Experience
+            <h1 className="font-bold font-second text-3xl dark:text-btnNav-default text-h1lg mb-8 whitespace-nowrap">
+              {language === "en" ? pEN.experience : pES.experiencia}
             </h1>
 
             <div
-              className="w-full flex gap-5 max-w-4xl  mb-5 p-8 rounded-lg shadow-lg border-dashed border-2  dark:border-gray-600  
+              className="w-full flex gap-5 max-w-4xl  mb-5 p-8 rounded-lg shadow-lg border-dashed border-2  dark:border-gray-600 border-black  
                   self-end rounded-bl-[50px]"
             >
-              <PiStudent className=" text-5xl dark:text-btnNav-default" />
+              <PiStudent className=" text-5xl dark:text-btnNav-default text-black" />
               <div className=" flex flex-col ">
                 <p className="text-gray-700 text-base dark:text-gray-100 font-second font-normal">
-                  As a Systems Engineering student, I started developing web
-                  page prototypes with HTML and CSS to visualize my ideas, and
-                  then I learned JavaScript to add interaction to my projects.
+                  {language === "en" ? pEN.experience_1 : pES.experiencia_1}
                   <div className=" flex gap-3">
                     <FaHtml5 className=" text-xl  mt-2 text-techColors-html" />
                     <FaCss3 className="  text-xl  mt-2 text-techColors-css" />
@@ -301,49 +209,60 @@ function App() {
             </div>
 
             <div
-              className="w-full flex gap-5 max-w-4xl mb-5 bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-lgnav 
+              className="w-full flex gap-5 max-w-4xl mb-5 bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black
                   self-start rounded-br-[50px]"
             >
               <p className="text-gray-700 dark:text-gray-100 font-second font-normal">
-                Once my page had the basic HTML, CSS and javascript components,
-                I decided to find a framework that would provide me with
-                something more used in the work field so I started studying
-                React and tailwindcss where my first Project was{" "}
-                <span className="relative dark:text-exph1-default dark:hover:text-btnNav-default font-bold transition-opacity cursor-pointer group">
+                {language === "en" ? pEN.experience_2 : pES.experiencia_2}{" "}
+                <span
+                  onClick={() =>
+                    window.open("https://stellar-mochi-ae943c.netlify.app/")
+                  }
+                  className="relative dark:text-exph1-default text-h1lg dark:hover:text-btnNav-default hover:text-h1lg-hover font-bold transition-opacity cursor-pointer group"
+                >
                   Pet veterian
-                  <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-btnNav-hover transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover  transition-all duration-300 group-hover:w-full"></span>
                 </span>
-                , where I learned many new things that I implemented in my
-                personal projects.
+                {language === "en" ? pEN.experience_2_2 : pES.experiencia_2_2}
                 <div className=" flex gap-3">
                   <FaReact className=" text-xl  mt-2 text-techColors-react" />
                   <RiTailwindCssFill className="  text-xl  mt-2 text-techColors-twlcss" />
                 </div>
               </p>
-              <TbDeviceDesktopCode className=" text-7xl   text-center mx-2 dark:text-btnNav-default" />
+              <TbDeviceDesktopCode className=" text-7xl   text-center mx-2 dark:text-btnNav-default text-black" />
             </div>
 
             {/* Tercer div - Derecha */}
             <div
-              className="w-full flex  gap-5  max-w-4xl bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-lgnav 
+              className="w-full flex  gap-5  max-w-4xl bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black 
                   self-end rounded-bl-[50px]"
             >
-              <VscTools className=" text-6xl dark:text-btnNav-default" />
+              <VscTools className=" text-6xl dark:text-btnNav-default text-black" />
               <p className="text-gray-700 dark:text-gray-100 font-second font-normal">
-                In more advanced stages, I integrated my projects with local
-                servers using tools like Vite and Next.js. In projects such as{" "}
-                {""}
-                <span className="relative dark:text-exph1-default dark:hover:text-btnNav-default font-bold cursor-pointer group">
+                {language === "en" ? pEN.experience_3 : pES.experiencia_3} {""}
+                <span
+                  onClick={() =>
+                    window.open(
+                      "https://melodious-bublanina-f4baad.netlify.app/"
+                    )
+                  }
+                  className="relative dark:text-exph1-default text-h1lg dark:hover:text-btnNav-default hover:text-h1lg-hover font-bold cursor-pointer group"
+                >
                   Cripto React
-                  <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-btnNav-hover transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover transition-all duration-300 group-hover:w-full"></span>
                 </span>{" "}
-                and{" "}
-                <span className="relative dark:text-exph1-default dark:hover:text-btnNav-default font-bold cursor-pointer group">
+                {language === "en" ? "and" : "y"}{" "}
+                <span
+                  onClick={() =>
+                    window.open("https://melodic-blini-20c2fd.netlify.app/")
+                  }
+                  className="relative dark:text-exph1-default text-h1lg dark:hover:text-btnNav-default hover:text-h1lg-hover font-bold cursor-pointer group"
+                >
                   Weather Forecast
-                  <span className="absolute left-0 bottom-0 h-0.5 w-0 bg-btnNav-hover transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover transition-all duration-300 group-hover:w-full"></span>
                 </span>
-                , I implemented technologies such as Axios, Zod and Redux,
-                increasing the complexity of my developments.
+                {""}
+                {language === "en" ? pEN.experience_3_2 : pES.experiencia_3_2}
                 <div className=" flex gap-3">
                   <SiNextdotjs className=" text-xl  mt-2 dark:text-white" />
                   <SiVite className=" text-xl  mt-2 text-techColors-vite" />
@@ -361,7 +280,7 @@ function App() {
                 <div className="container px-4 py-1 max-w-6xl">
                   <section>
                     <h1 className="font-bold font-second dark:text-btnNav-default text-3xl  text-h1lg text-center mb-12">
-                      Projects
+                      {language === "en" ? pEN.projects : pES.proyectos}
                     </h1>
                     <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-8">
                       {projects.map((project, index) => (
@@ -383,45 +302,14 @@ function App() {
           </section>
 
           <div className="mt-16 text-center " id="contact">
-            <h2 className="font-bold  text-3xl dark:text-btnNav-default font-second text-h1lg mt-6 mb-10 whitespace-nowrap">
-              Contact
-            </h2>
-            <section id="contact" class="py-12">
-              <div class="container mx-auto px-4">
-                <div class="max-w-md mx-auto bg-white dark:bg-transparent p-8 rounded-lg shadow-lg">
-                  <div class="space-y-4 text-center">
-                    <div>
-                      <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-300">
-                        Correo Electrónico
-                      </h3>
-                      <a
-                        href="mailto:tuemail@gmail.com"
-                        class="text-blue-500 hover:underline text-lg font-medium"
-                      >
-                        rodriguesluis414@gmail.com
-                      </a>
-                    </div>
-
-                    <div>
-                      <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-300">
-                        Teléfono
-                      </h3>
-                      <div class="flex items-center justify-center space-x-2">
-                        <span class="w-6 h-4 overflow-hidden rounded-sm">
-                          <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Colombia.svg"
-                            alt="Bandera de Colombia"
-                            class="object-cover"
-                          />
-                        </span>
-                        <a class="text-gray-800 dark:text-gray-200 font-medium">
-                          +57 318 841 3911
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <section id="contact" className=" text-end py-12">
+              <span
+                onClick={() => window.open("mailto:rodriguesluis414@gmail.com")}
+                className="relative dark:text-btnNav-default text-black  dark:hover:text-btnNav-default font-sm font-second font-medium mr-5  cursor-pointer group"
+              >
+                {language === "en" ? "Contact Me" : "Contacto"}
+                <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-black transition-all duration-300 group-hover:w-full"></span>
+              </span>{" "}
             </section>
           </div>
         </div>

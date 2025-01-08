@@ -16,17 +16,17 @@ const ProjectCard = ({
         alt={title}
         className="w-full h-40 object-cover rounded-md mb-4   "
       />
-      <h3 className="text-xl font-bold dark:text-white font-second text-lgnav mb-2">
+      <h3 className="text-xl font-bold dark:text-white font-second text-black mb-2">
         {title}
       </h3>
-      <p className=" text-lgnav dark:text-white text-sm font-second font-extralight leading-relaxed mb-4">
+      <p className=" text-black dark:text-white text-sm font-second font-extralight leading-relaxed mb-4">
         {description}
       </p>
       <div className="flex flex-wrap gap-2 mb-4">
         {technologies.map((tech, index) => (
           <span
             key={index}
-            className="dark:bg-gray-700  bg-lgnav text-white  transition-all dark:text-gray-300 px-3 py-1 text-xs rounded-full"
+            className="dark:bg-gray-700  bg-h1lg-hover text-white  transition-all dark:text-gray-300 px-3 py-1 text-xs rounded-full"
           >
             {tech}
           </span>
@@ -39,7 +39,7 @@ const ProjectCard = ({
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm text-teal-400 hover:underline"
         >
-          <FaGithub className=" dark:text-gray-100  dark:hover:text-gray-200 text-h1lg hover:text-h1lg-hover transition-transform text-xl transform hover:scale-125 " />
+          <FaGithub className=" dark:text-gray-100  dark:hover:text-gray-200 text-black hover:text-gray-700 transition-transform text-xl transform hover:scale-125 " />
         </a>
         <a
           href={liveLink}
@@ -47,7 +47,7 @@ const ProjectCard = ({
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm text-teal-400 hover:underline"
         >
-          <FaExternalLinkAlt className="dark:text-gray-100  dark:hover:text-gray-200 text-h1lg hover:text-h1lg-hover transition-transform text-lg transform hover:scale-125 " />
+          <FaExternalLinkAlt className="dark:text-gray-100  dark:hover:text-gray-200 text-black hover:text-gray-700 transition-transform text-lg transform hover:scale-125 " />
         </a>
       </div>
     </div>

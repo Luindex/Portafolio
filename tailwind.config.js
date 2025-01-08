@@ -43,8 +43,8 @@ export default {
         },
 
         h1lg: {
-          DEFAULT: "#EB8317",
-          hover: "#f68a19",
+          DEFAULT: "rgb(103 58 182)",
+          hover: "rgb(79 37 153)",
         },
         blackBase: {
           DEFAULT: "#176B87",
