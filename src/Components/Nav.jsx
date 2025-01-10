@@ -1,12 +1,10 @@
 import {useState, useEffect} from "react"
 import {MoonIcon, SunIcon, LanguageIcon} from "@heroicons/react/24/outline"
 import {GrDocumentDownload} from "react-icons/gr"
-import {useTranslation} from "react-i18next"
 
 const Nav = ({language, setLanguage}) => {
   const [darkMode, setDarkMode] = useState("dark")
   const [activeMenu, setActiveMenu] = useState("")
-  const {t, i18n} = useTranslation()
 
   useEffect(() => {
     document.documentElement.classList.add("dark")
