@@ -138,16 +138,17 @@ const Nav = ({language, setLanguage}) => {
             )}
           </div>
 
-          <a
+          <button
             className="flex items-center gap-x-1 text-white px-2 py-2 rounded-lg shadow-md ease-in-out delay-150 hover:-translate-y-1 dark:bg-btnNav-default bg-h1lg hover:bg-h1lg-hover  dark:hover:bg-btnNav-hover scale-110 transition focus:ring   duration-200"
-            href="/Luis_Rodriguez_Frontend_Developer.pdf"
-            download="/Luis_Rodriguez_Frontend_Developer.pdf"
+            onClick={() =>
+              window.open("/Luis_Rodriguez_Frontend_Developer.pdf", "_blank")
+            }
           >
             <GrDocumentDownload className="w-4 h-4 dark:text-black text-slate-100   font-Sutittle font-bold transition " />
             <span className=" dark:text-black text-slate-100  font-bold  text-xs">
               CV
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </nav>
