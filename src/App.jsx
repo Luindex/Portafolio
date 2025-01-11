@@ -155,12 +155,13 @@ function App() {
               >
                 <FiGithub className="text-xl" />
               </button>
-              <button
+              <a
                 className="flex items-center justify-center w-12 h-12 ease-in-out delay-150 hover:-translate-y-1 dark:text-white text-black dark:bg-slate-900 bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-slate-800  transition-all focus:outline-none"
-                onClick={() => window.open("/path-to-your-cv.pdf", "_blank")} //todo
+                href="/Luis_Rodriguez_Frontend_Developer.pdf"
+                download="/Luis_Rodriguez_Frontend_Developer.pdf"
               >
                 <GrDocumentUser className="text-xl" />
-              </button>
+              </a>
             </div>
           </section>
 

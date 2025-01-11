@@ -5,7 +5,6 @@ import {GrDocumentDownload} from "react-icons/gr"
 const Nav = ({language, setLanguage}) => {
   const [darkMode, setDarkMode] = useState("dark")
   const [activeMenu, setActiveMenu] = useState("")
-
   useEffect(() => {
     document.documentElement.classList.add("dark")
   }, [])
@@ -45,7 +44,7 @@ const Nav = ({language, setLanguage}) => {
               href="#about"
               className="dark:text-white text-black hover:text-h1lg font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
             >
-              {language === "en" ? "About" : "Acerca de"}
+              {language === "en" ? "About me" : "Acerca de mi"}
             </a>
 
             <a
@@ -139,15 +138,16 @@ const Nav = ({language, setLanguage}) => {
             )}
           </div>
 
-          <button
+          <a
             className="flex items-center gap-x-1 text-white px-2 py-2 rounded-lg shadow-md ease-in-out delay-150 hover:-translate-y-1 dark:bg-btnNav-default bg-h1lg hover:bg-h1lg-hover  dark:hover:bg-btnNav-hover scale-110 transition focus:ring   duration-200"
-            onClick={() => window.open("/mi-cv.pdf", "_blank")}
+            href="/Luis_Rodriguez_Frontend_Developer.pdf"
+            download="/Luis_Rodriguez_Frontend_Developer.pdf"
           >
             <GrDocumentDownload className="w-4 h-4 dark:text-black text-slate-100   font-Sutittle font-bold transition " />
             <span className=" dark:text-black text-slate-100  font-bold  text-xs">
               CV
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </nav>
