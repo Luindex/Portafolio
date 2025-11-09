@@ -7,8 +7,11 @@ export const pEN = {
     "As a frontend developer, I specialize in creating intuitive, responsive and visually appealing web applications. I work with modern tools like React, TypeScript, and Tailwind CSS to create seamless user experiences. I pride myself on writing clean, maintainable code and transforming ideas into beautiful, functional interfaces that users love to interact with",
 
   experience: "Experience",
+  experience_Invamer: "During my internship, I collaborated with the Solutions and IT team on the development of Central Empleados, an internal system for the Human Resources department. I participated in both frontend and backend development, focusing on backend logic and data management using Laravel (PHP). I worked in an Agile Scrum environment, using Jira for task tracking and team coordination. This experience solidified my understanding of development workflows in real-world environments, teamwork, and best coding practices in production environments.",
+  cargo: "Software Developer Intern",
   experience_1:
-    "As a Systems Engineering student, I started developing web page prototypes with HTML and CSS to visualize my ideas, and then I learned JavaScript to add interaction to my projects.",
+    "As a Systems Engineering student, I began creating web page prototypes using HTML, CSS, and JavaScript to bring my ideas to life. As I advanced, I explored modern frameworks and libraries, focusing on React to build dynamic and responsive interfaces. My first project",
+  experience_1_2: ", allowed me to apply real frontend concepts and start shaping my development workflow, combining structure, functionality, and design",
   experience_2:
     "Once my page had the basic HTML, CSS and javascript components, I decided to find a framework that would provide me with something more used in the work field so I started studying React and tailwindcss where my first Project was",
   experience_2_2:

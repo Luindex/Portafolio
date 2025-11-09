@@ -6,8 +6,11 @@ export const pES = {
   acerda_de2:
     "Como desarrollador frontend, me especializo en la creación de aplicaciones web intuitivas, responsivas y visualmente atractivas. Trabajo con herramientas modernas como React, TypeScript y Tailwind CSS para crear experiencias de usuario perfectas. Me enorgullezco de escribir código limpio y fácil de mantener y de transformar ideas en interfaces hermosas y funcionales con las que a los usuarios les encanta interactuar.",
   experiencia: "Experiencia",
+  experiencia_Invamer: "Durante mi periodo de prácticas, colaboré con el equipo de Soluciones e Informática en el desarrollo de Central Empleados, un sistema interno para el departamento de Recursos Humanos. Participé tanto en el desarrollo frontend como backend, centrándome en la lógica backend y la gestión de datos con Laravel (PHP). Trabajé en un entorno Agile Scrum, utilizando Jira para el seguimiento de tareas y la coordinación del equipo. Esta experiencia consolidó mi comprensión de los flujos de trabajo de desarrollo en entornos reales, el trabajo en equipo y las buenas prácticas de código en entornos de producción.",
+  Cargo: "Practicante de desarrollo de software",
   experiencia_1:
-    "Como estudiante de Ingeniería de Sistemas, comencé a desarrollar prototipos de páginas web con HTML y CSS para visualizar mis ideas, y luego aprendí JavaScript para agregar interacción a mis proyectos.",
+    "Como estudiante de Ingeniería de Sistemas, comencé a crear prototipos de páginas web con HTML, CSS y JavaScript para dar vida a mis ideas. A medida que avanzaba, exploré frameworks y librerías modernas, centrándome en React para crear interfaces dinámicas y responsivas. Mi primer proyecto.",
+  experiencia_1_2: ", me permitió aplicar conceptos reales de frontend y empezar a definir mi flujo de trabajo de desarrollo, combinando estructura, funcionalidad y diseño.",
   experiencia_2:
     "Una vez que mi página tuvo los componentes básicos HTML, CSS y javascript, decidí buscar un framework que me proporcionara algo más utilizado en el campo laboral así que comencé a estudiar React y tailwindcss donde fue mi primer Proyecto.",
   experiencia_2_2:

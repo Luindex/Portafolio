@@ -1,24 +1,23 @@
-import Nav from "./Components/Nav"
-import ImgProfile from "../public/ImgProfile.jpg"
-import {FaReact, FaHtml5, FaJs, FaCss3} from "react-icons/fa"
-import {SiTypescript, SiVite, SiZod, SiRedux, SiNextdotjs} from "react-icons/si"
-import {RiTailwindCssFill} from "react-icons/ri"
-import ProjectCard from "./Components/ProjectCard"
-import todoImg from "../public/TodoApp.jpg"
-import Coktail from "../public/Coktail.jpg"
-import Cripto from "../public/Cripto.jpg"
-import clima from "../public/Clima.jpg"
-import Portafolio from "../public/Portafolio.jpg"
-import Veterinarian from "../public/Veterinaria.jpg"
-import {useEffect, useState} from "react"
-import {FiGithub} from "react-icons/fi"
-import {LuLinkedin} from "react-icons/lu"
-import {GrDocumentUser} from "react-icons/gr"
-import {PiStudent} from "react-icons/pi"
-import {TbDeviceDesktopCode} from "react-icons/tb"
-import {pEN} from "./translations/en/global"
-import {pES} from "./translations/es/globalES"
-import {VscTools} from "react-icons/vsc"
+import { useEffect, useState } from "react";
+import { FaCss3, FaHtml5, FaJs, FaLaravel, FaReact } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
+import { GrDocumentUser } from "react-icons/gr";
+import { LuLinkedin } from "react-icons/lu";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { SiNextdotjs, SiRedux, SiTypescript, SiVite, SiZod } from "react-icons/si";
+import { TbDeviceDesktopCode } from "react-icons/tb";
+import { VscTools } from "react-icons/vsc";
+import clima from "../public/Clima.jpg";
+import Coktail from "../public/Coktail.jpg";
+import Cripto from "../public/Cripto.jpg";
+import ImgProfile from "../public/ImgProfile.jpg";
+import Portafolio from "../public/Portafolio.jpg";
+import todoImg from "../public/TodoApp.jpg";
+import Veterinarian from "../public/Veterinaria.jpg";
+import Nav from "./Components/Nav";
+import ProjectCard from "./Components/ProjectCard";
+import { pEN } from "./translations/en/global";
+import { pES } from "./translations/es/globalES";
 
 let projects = [
   {
@@ -197,13 +196,46 @@ function App() {
             </h1>
 
             <div
+              className="w-full flex gap-5 max-w-4xl mb-5 bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black
+                  self-start rounded-br-[50px]"
+            >
+
+              <div className="">
+                <div className="mb-2">
+                  <p className="font-bold uppercase dark:text-btnNav-default text-h1lg"><span>{language === "en" ? pEN.cargo : pES.Cargo}</span> |  Invamer S.A.S.</p>
+                  <p className=" text-sm dark:text-btnNav-default text-black font-semibold ">Medellín, Colombia |   <span>{language === "en" ? "Jan 2025 – Aug 2025" : "Ene 2025 – Ago 2025"}</span></p>
+                </div>
+                <div className=" flex flex-col ">
+                  <p className="text-gray-700 text-base dark:text-gray-100 font-second font-normal">
+                    {language === "en" ? pEN.experience_Invamer : pES.experiencia_Invamer}
+                    <div className=" flex gap-3">
+                      <FaLaravel className=" text-xl  mt-2 text-techColors-html" />
+                      <FaReact className=" text-xl  mt-2 text-techColors-react" />
+                      <SiTypescript className="text-xl  mt-2 text-blue-700" />
+                      <RiTailwindCssFill className="  text-xl  mt-2 text-techColors-twlcss" />
+
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
               className="w-full flex gap-5 max-w-4xl  mb-5 p-8 rounded-lg shadow-lg border-dashed border-2  dark:border-gray-600 border-black  
                   self-end rounded-bl-[50px]"
             >
-              <PiStudent className=" text-5xl dark:text-btnNav-default text-black" />
+              <TbDeviceDesktopCode className=" text-8xl dark:text-btnNav-default text-black" />
               <div className=" flex flex-col ">
                 <p className="text-gray-700 text-base dark:text-gray-100 font-second font-normal">
-                  {language === "en" ? pEN.experience_1 : pES.experiencia_1}
+                  {language === "en" ? pEN.experience_1 : pES.experiencia_1}{" "}
+                  <span
+                    onClick={() =>
+                      window.open("https://stellar-mochi-ae943c.netlify.app/")
+                    }
+                    className="relative dark:text-exph1-default text-h1lg dark:hover:text-btnNav-default hover:text-h1lg-hover font-bold transition-opacity cursor-pointer group"
+                  >
+                    Pet Veterian<span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover  transition-all duration-300 group-hover:w-full"></span></span>
+                  {language === "en" ? pEN.experience_1_2 : pES.experiencia_1_2}
                   <div className=" flex gap-3">
                     <FaHtml5 className=" text-xl  mt-2 text-techColors-html" />
                     <FaCss3 className="  text-xl  mt-2 text-techColors-css" />
@@ -213,34 +245,12 @@ function App() {
               </div>
             </div>
 
-            <div
-              className="w-full flex gap-5 max-w-4xl mb-5 bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black
-                  self-start rounded-br-[50px]"
-            >
-              <p className="text-gray-700 dark:text-gray-100 font-second font-normal">
-                {language === "en" ? pEN.experience_2 : pES.experiencia_2}{" "}
-                <span
-                  onClick={() =>
-                    window.open("https://stellar-mochi-ae943c.netlify.app/")
-                  }
-                  className="relative dark:text-exph1-default text-h1lg dark:hover:text-btnNav-default hover:text-h1lg-hover font-bold transition-opacity cursor-pointer group"
-                >
-                  Pet veterian
-                  <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover  transition-all duration-300 group-hover:w-full"></span>
-                </span>
-                {language === "en" ? pEN.experience_2_2 : pES.experiencia_2_2}
-                <div className=" flex gap-3">
-                  <FaReact className=" text-xl  mt-2 text-techColors-react" />
-                  <RiTailwindCssFill className="  text-xl  mt-2 text-techColors-twlcss" />
-                </div>
-              </p>
-              <TbDeviceDesktopCode className=" text-7xl   text-center mx-2 dark:text-btnNav-default text-black" />
-            </div>
+
 
             {/* Tercer div - Derecha */}
             <div
-              className="w-full flex  gap-5  max-w-4xl bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black 
-                  self-end rounded-bl-[50px]"
+              className="w-full flex gap-5 max-w-4xl mb-5 bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black
+                  self-start rounded-br-[50px]"
             >
               <VscTools className=" text-6xl dark:text-btnNav-default text-black" />
               <p className="text-gray-700 dark:text-gray-100 font-second font-normal">
@@ -273,7 +283,7 @@ function App() {
                   <SiVite className=" text-xl  mt-2 text-techColors-vite" />
                   <SiZod className="  text-xl  mt-2 text-techColors-css" />
                   <SiRedux className="  text-xl  mt-2 text-indigo-600" />
-                  <SiTypescript className="text-xl  mt-2 text-blue-700" />
+
                 </div>
               </p>
             </div>
