@@ -1,8 +1,8 @@
-import {useState, useEffect} from "react"
-import {MoonIcon, SunIcon, LanguageIcon} from "@heroicons/react/24/outline"
-import {GrDocumentDownload} from "react-icons/gr"
+import { LanguageIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline"
+import { useEffect, useState } from "react"
+import { GrDocumentDownload } from "react-icons/gr"
 
-const Nav = ({language, setLanguage}) => {
+const Nav = ({ language, setLanguage }) => {
   const [darkMode, setDarkMode] = useState("dark")
   const [activeMenu, setActiveMenu] = useState("")
   useEffect(() => {

@@ -124,7 +124,6 @@ function App() {
             <div className="flex justify-center items-center">
               <h1 className="font-bold  text-2xl font-mono dark:text-btnNav-default text-h1lg mt-1 whitespace-nowrap">
                 {typedText}
-                {/* Cursor visible solo mientras está escribiendo */}
                 {!isTypingComplete && <span className="animate-pulse">|</span>}
               </h1>
             </div>
