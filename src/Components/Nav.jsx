@@ -1,10 +1,13 @@
 import { LanguageIcon, MoonIcon, SunIcon } from "@heroicons/react/24/outline"
 import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { GrDocumentDownload } from "react-icons/gr"
 
-const Nav = ({ language, setLanguage }) => {
+const Nav = () => {
+  const { t, i18n } = useTranslation()
   const [darkMode, setDarkMode] = useState("dark")
   const [activeMenu, setActiveMenu] = useState("")
+
   useEffect(() => {
     document.documentElement.classList.add("dark")
   }, [])
@@ -25,7 +28,7 @@ const Nav = ({ language, setLanguage }) => {
   }
 
   const changeLanguage = (lang) => {
-    setLanguage(lang)
+    i18n.changeLanguage(lang)
     setActiveMenu("")
   }
 
@@ -38,34 +41,34 @@ const Nav = ({ language, setLanguage }) => {
               href="#"
               className="dark:text-white text-black hover:text-h1lg  font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
             >
-              {language === "en" ? "Home" : "Inicio"}
+              {t("nav.home")}
             </a>
             <a
               href="#about"
               className="dark:text-white text-black hover:text-h1lg font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
             >
-              {language === "en" ? "About me" : "Acerca de mi"}
+              {t("nav.about")}
             </a>
 
             <a
               href="#Experience"
               className="dark:text-white text-black hover:text-h1lg font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
             >
-              {language === "en" ? "Experience" : "Experiencia"}
+              {t("nav.experience")}
             </a>
 
             <a
               href="#projects"
               className="dark:text-white text-black hover:text-h1lg font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
             >
-              {language === "en" ? "Projects" : "Proyectos"}
+              {t("nav.projects")}
             </a>
 
             <a
               href="#contact"
               className="dark:text-white text-black hover:text-h1lg font-second font-sm px-2 py-1 rounded-lg font-xl dark:hover:text-btnNav-default ease-in-out delay-150 hover:-translate-y-1  cursor-pointer  transition"
             >
-              {language === "en" ? "Contact" : "Contacto"}
+              {t("nav.contact")}
             </a>
           </ul>
         </div>

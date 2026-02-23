@@ -1,5 +1,5 @@
 import React from "react"
-import {FaExternalLinkAlt, FaGithub} from "react-icons/fa"
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa"
 
 const ProjectCard = ({
   image,
@@ -10,7 +10,7 @@ const ProjectCard = ({
   repoLink,
 }) => {
   return (
-    <div className=" dark:border-transparent border-lgnav bg-transparent p-6 rounded-lg shadow-lg  transform hover:scale-105 transition-all duration-300 dark:hover:bg-gray-900 hover:bg-opacity-100 dark:shadow-primary_hover hover:shadow-md">
+    <div className="bg-transparent dark:bg-transparent p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 dark:hover:bg-gray-900 hover:shadow-xl dark:shadow-primary_hover">
       <img
         src={image}
         alt={title}

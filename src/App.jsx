@@ -1,27 +1,26 @@
-import { useEffect, useState } from "react";
-import { FaCss3, FaHtml5, FaJs, FaLaravel, FaReact } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
-import { GrDocumentUser } from "react-icons/gr";
-import { LuLinkedin } from "react-icons/lu";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiNextdotjs, SiRedux, SiTypescript, SiVite, SiZod } from "react-icons/si";
-import { TbDeviceDesktopCode } from "react-icons/tb";
-import { VscTools } from "react-icons/vsc";
-import clima from "../public/Clima.jpg";
-import Coktail from "../public/Coktail.jpg";
-import Cripto from "../public/Cripto.jpg";
-import ImgProfile from "../public/ImgProfile.jpg";
-import Portafolio from "../public/Portafolio.jpg";
-import todoImg from "../public/TodoApp.jpg";
-import Veterinarian from "../public/Veterinaria.jpg";
-import Nav from "./Components/Nav";
-import ProjectCard from "./Components/ProjectCard";
-import { pEN } from "./translations/en/global";
-import { pES } from "./translations/es/globalES";
+import { useEffect, useState } from "react"
+import { useTranslation } from "react-i18next"
+import { FaLaravel, FaReact } from "react-icons/fa"
+import { FiGithub } from "react-icons/fi"
+import { GrDocumentUser } from "react-icons/gr"
+import { LuLinkedin } from "react-icons/lu"
+import { RiTailwindCssFill } from "react-icons/ri"
+import { SiNextdotjs, SiRedux, SiTypescript, SiVite, SiZod, SiExpo, SiAxios } from "react-icons/si"
+import { TbDeviceDesktopCode, TbDeviceMobileCode } from "react-icons/tb"
+import { VscAzure } from "react-icons/vsc";
+import clima from "../public/Clima.jpg"
+import Coktail from "../public/Coktail.jpg"
+import Cripto from "../public/Cripto.jpg"
+import ImgProfile from "../public/ImgProfile.jpg"
+import Portafolio from "../public/Portafolio.jpg"
+import todoImg from "../public/TodoApp.jpg"
+import Veterinarian from "../public/Veterinaria.jpg"
+import Nav from "./Components/Nav"
+import ProjectCard from "./Components/ProjectCard"
 
-let projects = [
+const projects = [
   {
-    image: todoImg, // Cambia por la URL de tu imagen
+    image: todoImg,
     title: "Todo List App",
     description:
       "This is a todo list project developed with React, TypeScript and Vite. The application allows users to add, edit, delete and mark tasks as completed, as well as filter tasks by their status.",
@@ -74,14 +73,12 @@ let projects = [
     liveLink: "",
     repoLink: "https://github.com/Luindex/Portafolio",
   },
-
-  // Agrega más proyectos aquí
 ]
 
-function App() {
-  const [language, setLanguage] = useState("en")
+const fullText = "Frontend Developer"
 
-  const fullText = "Frontend Developer"
+function App() {
+  const { t } = useTranslation()
   const [typedText, setTypedText] = useState("")
   const [index, setIndex] = useState(0)
   const [isTypingComplete, setIsTypingComplete] = useState(false)
@@ -97,16 +94,16 @@ function App() {
     } else {
       setIsTypingComplete(true)
     }
-  }, [index, fullText])
+  }, [index])
 
   return (
     <div
-      className="relative min-h-screen w-full  
+      className="relative min-h-screen w-full
       bg-gradient-to-r dark:from-slate-900 dark:via-black dark:to-slate-900
        from-slate-50 via-indigo-100 to-slate-50
       bg-[length:150%_100%] bg-[40%_0%] dark:bg-black overflow-auto "
     >
-      <Nav language={language} setLanguage={setLanguage} />
+      <Nav />
       <main className="flex-grow mt-20">
         <div className="container px-4 py-8 mx-auto max-w-6xl">
           <section id="info" className="">
@@ -129,7 +126,7 @@ function App() {
             </div>
             <div className="flex justify-center mt-10">
               <p className="dark:text-yellow-50 text-black font-second font-normal  text-lg max-w-2xl text-center leading-relaxed">
-                {language === "en" ? pEN.des : pES.des}
+                {t("hero.description")}
               </p>
             </div>
 
@@ -170,17 +167,16 @@ function App() {
           <section id="about">
             <div className="flex justify-center items-center mt-32">
               <h1 className="font-bold  font-second  dark:text-btnNav-default text-3xl  text-h1lg mt-6 whitespace-nowrap">
-                {language === "en" ? pEN.about_me : pES.acerda_de}
+                {t("about.title")}
               </h1>
             </div>
             <div className="justify-center mt-10 flex flex-col items-center">
               <p className="dark:text-white text-black font-second font-light text-md max-w-2xl text-center leading-relaxed">
-                {language === "en" ? pEN.about_me1 : pES.acerda_de1}
+                {t("about.p1")}
               </p>
 
               <p className="dark:text-white text-black font-second font-light text-md mt-4 max-w-2xl text-center leading-relaxed">
-                {" "}
-                {language === "en" ? pEN.about_me2 : pES.acerda_de2}
+                {t("about.p2")}
               </p>
             </div>
           </section>
@@ -191,9 +187,10 @@ function App() {
             className="flex flex-col  items-center mt-32 mb-20"
           >
             <h1 className="font-bold font-second text-3xl dark:text-btnNav-default text-h1lg mb-8 whitespace-nowrap">
-              {language === "en" ? pEN.experience : pES.experiencia}
+              {t("experience.title")}
             </h1>
 
+            {/* Card 1 — El Sol Nec (actual) */}
             <div
               className="w-full flex gap-5 max-w-4xl mb-5 bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black
                   self-start rounded-br-[50px]"
@@ -201,90 +198,82 @@ function App() {
 
               <div className="">
                 <div className="mb-2">
-                  <p className="font-bold uppercase dark:text-btnNav-default text-h1lg"><span>{language === "en" ? pEN.cargo : pES.Cargo}</span> |  Invamer S.A.S.</p>
-                  <p className=" text-sm dark:text-btnNav-default text-black font-semibold ">Medellín, Colombia |   <span>{language === "en" ? "Jan 2025 – Aug 2025" : "Ene 2025 – Ago 2025"}</span></p>
+                  <p className="font-bold uppercase dark:text-btnNav-default text-h1lg">
+                    <span>{t("experience.elSolNec_cargo")}</span> | El Sol Nec
+                  </p>
+                  <p className="text-sm dark:text-btnNav-default text-black font-semibold">
+                    Medellín, Colombia | <span>{t("experience.elSolNec_dates")}</span>
+                  </p>
                 </div>
-                <div className=" flex flex-col ">
+                <div className="flex flex-col">
                   <p className="text-gray-700 text-base dark:text-gray-100 font-second font-normal">
-                    {language === "en" ? pEN.experience_Invamer : pES.experiencia_Invamer}
-                    <div className=" flex gap-3">
-                      <FaLaravel className=" text-xl  mt-2 text-techColors-html" />
-                      <FaReact className=" text-xl  mt-2 text-techColors-react" />
-                      <SiTypescript className="text-xl  mt-2 text-blue-700" />
-                      <RiTailwindCssFill className="  text-xl  mt-2 text-techColors-twlcss" />
-
+                    {t("experience.elSolNec")}
+                    <div className="flex gap-3">
+                      <FaReact className="text-xl mt-2 text-techColors-react" />
+                      <SiTypescript className="text-xl mt-2 text-blue-700" />
+                      <RiTailwindCssFill className="text-xl mt-2 text-techColors-twlcss" />
+                      <SiAxios className="text-xl mt-2 text-purple-700" />
+                      <SiExpo className="text-xl mt-2 text-gray-700" />
+                      <VscAzure className="text-xl mt-2 text-blue-700" />
                     </div>
                   </p>
                 </div>
               </div>
             </div>
 
+            {/* Card 2 — Invamer */}
             <div
-              className="w-full flex gap-5 max-w-4xl  mb-5 p-8 rounded-lg shadow-lg border-dashed border-2  dark:border-gray-600 border-black  
+              className="w-full flex gap-5 max-w-4xl mb-5 p-8 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black
                   self-end rounded-bl-[50px]"
             >
-              <TbDeviceDesktopCode className=" text-8xl dark:text-btnNav-default text-black" />
-              <div className=" flex flex-col ">
+              <div className="">
+                <div className="mb-2">
+                  <p className="font-bold uppercase dark:text-btnNav-default text-h1lg">
+                    <span>{t("experience.cargo")}</span> | Invamer S.A.S.
+                  </p>
+                  <p className="text-sm dark:text-btnNav-default text-black font-semibold">
+                    Medellín, Colombia | <span>{t("experience.dates")}</span>
+                  </p>
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-gray-700 text-base dark:text-gray-100 font-second font-normal">
+                    {t("experience.invamer")}
+                    <div className="flex gap-3">
+                      <FaLaravel className="text-xl mt-2 text-techColors-html" />
+                      <FaReact className="text-xl mt-2 text-techColors-react" />
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3 — Proyectos personales */}
+            <div
+              className="w-full flex gap-5 max-w-4xl mb-5 bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black
+                  self-start rounded-br-[50px]"
+            >
+              <TbDeviceDesktopCode className="text-8xl dark:text-btnNav-default text-black" />
+              <div className="flex flex-col">
                 <p className="text-gray-700 text-base dark:text-gray-100 font-second font-normal">
-                  {language === "en" ? pEN.experience_1 : pES.experiencia_1}{" "}
+                  {t("experience.p1")}{" "}
                   <span
                     onClick={() =>
                       window.open("https://stellar-mochi-ae943c.netlify.app/")
                     }
                     className="relative dark:text-exph1-default text-h1lg dark:hover:text-btnNav-default hover:text-h1lg-hover font-bold transition-opacity cursor-pointer group"
                   >
-                    Pet Veterian<span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover  transition-all duration-300 group-hover:w-full"></span></span>
-                  {language === "en" ? pEN.experience_1_2 : pES.experiencia_1_2}
-                  <div className=" flex gap-3">
-                    <FaHtml5 className=" text-xl  mt-2 text-techColors-html" />
-                    <FaCss3 className="  text-xl  mt-2 text-techColors-css" />
-                    <FaJs className="  text-xl  mt-2 text-techColors-js" />
+                    Pet Veterinary
+                    <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover transition-all duration-300 group-hover:w-full"></span>
+                  </span>
+                  {t("experience.p1_2")}
+                  <div className="flex gap-3">
+                    <SiNextdotjs className="text-xl mt-2 dark:text-white" />
+                    <SiVite className="text-xl mt-2 text-techColors-vite" />
+                    <SiZod className="text-xl mt-2 text-techColors-css" />
+                    <SiRedux className="text-xl mt-2 text-indigo-600" />
                   </div>
                 </p>
               </div>
-            </div>
-
-
-
-            {/* Tercer div - Derecha */}
-            <div
-              className="w-full flex gap-5 max-w-4xl mb-5 bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black
-                  self-start rounded-br-[50px]"
-            >
-              <VscTools className=" text-6xl dark:text-btnNav-default text-black" />
-              <p className="text-gray-700 dark:text-gray-100 font-second font-normal">
-                {language === "en" ? pEN.experience_3 : pES.experiencia_3} {""}
-                <span
-                  onClick={() =>
-                    window.open(
-                      "https://melodious-bublanina-f4baad.netlify.app/"
-                    )
-                  }
-                  className="relative dark:text-exph1-default text-h1lg dark:hover:text-btnNav-default hover:text-h1lg-hover font-bold cursor-pointer group"
-                >
-                  Cripto React
-                  <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover transition-all duration-300 group-hover:w-full"></span>
-                </span>{" "}
-                {language === "en" ? "and" : "y"}{" "}
-                <span
-                  onClick={() =>
-                    window.open("https://melodic-blini-20c2fd.netlify.app/")
-                  }
-                  className="relative dark:text-exph1-default text-h1lg dark:hover:text-btnNav-default hover:text-h1lg-hover font-bold cursor-pointer group"
-                >
-                  Weather Forecast
-                  <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover transition-all duration-300 group-hover:w-full"></span>
-                </span>
-                {""}
-                {language === "en" ? pEN.experience_3_2 : pES.experiencia_3_2}
-                <div className=" flex gap-3">
-                  <SiNextdotjs className=" text-xl  mt-2 dark:text-white" />
-                  <SiVite className=" text-xl  mt-2 text-techColors-vite" />
-                  <SiZod className="  text-xl  mt-2 text-techColors-css" />
-                  <SiRedux className="  text-xl  mt-2 text-indigo-600" />
-
-                </div>
-              </p>
             </div>
           </section>
 
@@ -294,7 +283,7 @@ function App() {
                 <div className="container px-4 py-1 max-w-6xl">
                   <section>
                     <h1 className="font-bold font-second dark:text-btnNav-default text-3xl  text-h1lg text-center mb-12">
-                      {language === "en" ? pEN.projects : pES.proyectos}
+                      {t("projects.title")}
                     </h1>
                     <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-8">
                       {projects.map((project, index) => (
@@ -315,13 +304,13 @@ function App() {
             </div>
           </section>
 
-          <div className="mt-16 text-center " id="contact">
-            <section id="contact" className=" text-end py-12">
+          <div className="mt-16 text-center" id="contact">
+            <section className="text-end py-12">
               <span
                 onClick={() => window.open("mailto:rodriguesluis414@gmail.com")}
                 className="relative dark:text-btnNav-default text-black  dark:hover:text-btnNav-default font-sm font-second font-medium mr-5  cursor-pointer group"
               >
-                {language === "en" ? "Contact Me" : "Contacto"}
+                {t("contact.label")}
                 <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-black transition-all duration-300 group-hover:w-full"></span>
               </span>{" "}
             </section>
