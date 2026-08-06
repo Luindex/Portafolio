@@ -6,7 +6,7 @@ import { GrDocumentUser } from "react-icons/gr"
 import { LuLinkedin } from "react-icons/lu"
 import { RiTailwindCssFill } from "react-icons/ri"
 import { SiNextdotjs, SiRedux, SiTypescript, SiVite, SiZod, SiExpo, SiAxios } from "react-icons/si"
-import { TbDeviceDesktopCode, TbDeviceMobileCode } from "react-icons/tb"
+import { TbDeviceDesktopCode } from "react-icons/tb"
 import { VscAzure } from "react-icons/vsc";
 import clima from "../public/Clima.jpg"
 import Coktail from "../public/Coktail.jpg"
@@ -22,44 +22,39 @@ const projects = [
   {
     image: todoImg,
     title: "Todo List App",
-    description:
-      "This is a todo list project developed with React, TypeScript and Vite. The application allows users to add, edit, delete and mark tasks as completed, as well as filter tasks by their status.",
-    technologies: ["React", "TypeScript", "Tailwind Css"],
+    descriptionKey: "projects.todo.description",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
     liveLink: "https://illustrious-gnome-0e5d7c.netlify.app/",
     repoLink: "https://github.com/Luindex/Todo-List",
   },
   {
     image: Coktail,
     title: "Beverage Search",
-    description:
-      "drinks react is a web application developed with react and typescript that allows users to search for drinks by ingredient and category, as well as save their favorite drinks",
-    technologies: ["React", "Redux", "Zod", "Zustand", "React-Router"],
+    descriptionKey: "projects.beverage.description",
+    technologies: ["React", "Redux", "Zod", "Zustand", "React Router"],
     liveLink: "https://splendid-concha-154198.netlify.app/",
     repoLink: "https://github.com/Luindex/Bebidas-React-TypeScript",
   },
   {
     image: Cripto,
     title: "Cripto React",
-    description:
-      "Cryptocurrency is an application developed with React and TypeScript that allows users to check the value of a cryptocurrency depending on the currency you choose.",
-    technologies: ["React", "Redux", "Tailwind", "Axios", "Zustand", "Zod"],
+    descriptionKey: "projects.crypto.description",
+    technologies: ["React", "Redux", "Tailwind CSS", "Axios", "Zustand", "Zod"],
     liveLink: "https://melodious-bublanina-f4baad.netlify.app/",
     repoLink: "https://github.com/Luindex/CriptoReacTypescript",
   },
   {
     image: clima,
     title: "Weather Forecast",
-    description:
-      "This project is a climate status consultant developed using React, TypeScript and Zod. It provides a simple interface for users to enter the location and get updated information about the weather in that area.",
-    technologies: ["React", "Redux", "Typescript", "Tailwind CSS", "Zod"],
+    descriptionKey: "projects.weather.description",
+    technologies: ["React", "Redux", "TypeScript", "Tailwind CSS", "Zod"],
     liveLink: "https://melodic-blini-20c2fd.netlify.app/",
     repoLink: "https://github.com/Luindex/Clima-React-TypeScript",
   },
   {
     image: Veterinarian,
     title: "Pet Veterinarian",
-    description:
-      "This is a web application developed with React and Tailwind CSS, designed to facilitate pet-related queries. The main objective is to provide pet owners with a quick and easy tool to manage and consult information.",
+    descriptionKey: "projects.vet.description",
     technologies: ["React", "Tailwind CSS"],
     liveLink: "https://stellar-mochi-ae943c.netlify.app/",
     repoLink: "https://github.com/Luindex/Veterinaria-Pet",
@@ -67,8 +62,7 @@ const projects = [
   {
     image: Portafolio,
     title: "Portfolio",
-    description:
-      "A responsive e-commerce platform with a modern UI and seamless shopping experience.",
+    descriptionKey: "projects.portfolio.description",
     technologies: ["React", "Vite", "Tailwind CSS"],
     liveLink: "",
     repoLink: "https://github.com/Luindex/Portafolio",
@@ -109,7 +103,7 @@ function App() {
           <section id="info" className="">
             <img
               src={ImgProfile}
-              alt="Profile Picture"
+              alt="Luis Rodriguez"
               className="rounded-full shadow-lg border-4 w-40 h-40 mx-auto mb-2 dark:border-gray-400 border-black"
             />
             <div className="flex justify-center items-center">
@@ -119,10 +113,10 @@ function App() {
             </div>
 
             <div className="flex justify-center items-center">
-              <h1 className="font-bold  text-2xl font-mono dark:text-btnNav-default text-h1lg mt-1 whitespace-nowrap">
+              <p className="font-bold  text-2xl font-mono dark:text-btnNav-default text-h1lg mt-1 whitespace-nowrap">
                 {typedText}
                 {!isTypingComplete && <span className="animate-pulse">|</span>}
-              </h1>
+              </p>
             </div>
             <div className="flex justify-center mt-10">
               <p className="dark:text-yellow-50 text-black font-second font-normal  text-lg max-w-2xl text-center leading-relaxed">
@@ -131,44 +125,41 @@ function App() {
             </div>
 
             <div className="flex justify-center gap-6 mt-10">
-              <button
+              <a
+                href="https://www.linkedin.com/in/luis-carlos-rodrigues-111163252/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
                 className="flex items-center  justify-center w-12 h-12 dark:text-white ease-in-out delay-150 hover:-translate-y-1 text-black dark:bg-slate-900 bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-slate-800 transition-all focus:outline-none"
-                onClick={() =>
-                  window.open(
-                    "https://www.linkedin.com/in/luis-carlos-rodrigues-111163252/",
-                    "_blank"
-                  )
-                }
               >
                 <LuLinkedin className="text-xl" />
-              </button>
-              <button
+              </a>
+              <a
+                href="https://github.com/Luindex"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile"
                 className="flex items-center justify-center w-12 h-12 ease-in-out delay-150 hover:-translate-y-1 dark:text-white text-black dark:bg-slate-900 bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-slate-800  transition-all focus:outline-none"
-                onClick={() =>
-                  window.open("https://github.com/Luindex", "_blank")
-                }
               >
                 <FiGithub className="text-xl" />
-              </button>
-              <button
+              </a>
+              <a
+                href="/Luis_Rodriguez_Frontend_Developer.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Download CV"
                 className="flex items-center justify-center w-12 h-12 ease-in-out delay-150 hover:-translate-y-1 dark:text-white text-black dark:bg-slate-900 bg-slate-100 hover:bg-slate-200   rounded-full shadow-lg dark:hover:bg-slate-800  transition-all focus:outline-none"
-                onClick={() =>
-                  window.open(
-                    "/Luis_Rodriguez_Frontend_Developer.pdf",
-                    "_blank"
-                  )
-                }
               >
                 <GrDocumentUser className="text-xl" />
-              </button>
+              </a>
             </div>
           </section>
 
           <section id="about">
             <div className="flex justify-center items-center mt-32">
-              <h1 className="font-bold  font-second  dark:text-btnNav-default text-3xl  text-h1lg mt-6 whitespace-nowrap">
+              <h2 className="font-bold  font-second  dark:text-btnNav-default text-3xl  text-h1lg mt-6 whitespace-nowrap">
                 {t("about.title")}
-              </h1>
+              </h2>
             </div>
             <div className="justify-center mt-10 flex flex-col items-center">
               <p className="dark:text-white text-black font-second font-light text-md max-w-2xl text-center leading-relaxed">
@@ -186,11 +177,11 @@ function App() {
             id="Experience"
             className="flex flex-col  items-center mt-32 mb-20"
           >
-            <h1 className="font-bold font-second text-3xl dark:text-btnNav-default text-h1lg mb-8 whitespace-nowrap">
+            <h2 className="font-bold font-second text-3xl dark:text-btnNav-default text-h1lg mb-8 whitespace-nowrap">
               {t("experience.title")}
-            </h1>
+            </h2>
 
-            {/* Card 1 — El Sol Nec (actual) */}
+            {/* Card 1 — El Sol N.E.C (actual) */}
             <div
               className="w-full flex gap-5 max-w-4xl mb-5 bg-inherit p-10 rounded-lg shadow-lg border-dashed border-2 dark:border-gray-600 border-black
                   self-start rounded-br-[50px]"
@@ -199,7 +190,7 @@ function App() {
               <div className="">
                 <div className="mb-2">
                   <p className="font-bold uppercase dark:text-btnNav-default text-h1lg">
-                    <span>{t("experience.elSolNec_cargo")}</span> | El Sol Nec
+                    <span>{t("experience.elSolNec_cargo")}</span> | El Sol N.E.C
                   </p>
                   <p className="text-sm dark:text-btnNav-default text-black font-semibold">
                     Medellín, Colombia | <span>{t("experience.elSolNec_dates")}</span>
@@ -208,15 +199,15 @@ function App() {
                 <div className="flex flex-col">
                   <p className="text-gray-700 text-base dark:text-gray-100 font-second font-normal">
                     {t("experience.elSolNec")}
-                    <div className="flex gap-3">
-                      <FaReact className="text-xl mt-2 text-techColors-react" />
-                      <SiTypescript className="text-xl mt-2 text-blue-700" />
-                      <RiTailwindCssFill className="text-xl mt-2 text-techColors-twlcss" />
-                      <SiAxios className="text-xl mt-2 text-purple-700" />
-                      <SiExpo className="text-xl mt-2 text-gray-700" />
-                      <VscAzure className="text-xl mt-2 text-blue-700" />
-                    </div>
                   </p>
+                  <div className="flex gap-3">
+                    <FaReact className="text-xl mt-2 text-techColors-react" />
+                    <SiTypescript className="text-xl mt-2 text-blue-700" />
+                    <RiTailwindCssFill className="text-xl mt-2 text-techColors-twlcss" />
+                    <SiAxios className="text-xl mt-2 text-purple-700" />
+                    <SiExpo className="text-xl mt-2 text-gray-700" />
+                    <VscAzure className="text-xl mt-2 text-blue-700" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -238,11 +229,11 @@ function App() {
                 <div className="flex flex-col">
                   <p className="text-gray-700 text-base dark:text-gray-100 font-second font-normal">
                     {t("experience.invamer")}
-                    <div className="flex gap-3">
-                      <FaLaravel className="text-xl mt-2 text-techColors-html" />
-                      <FaReact className="text-xl mt-2 text-techColors-react" />
-                    </div>
                   </p>
+                  <div className="flex gap-3">
+                    <FaLaravel className="text-xl mt-2 text-techColors-html" />
+                    <FaReact className="text-xl mt-2 text-techColors-react" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -256,63 +247,59 @@ function App() {
               <div className="flex flex-col">
                 <p className="text-gray-700 text-base dark:text-gray-100 font-second font-normal">
                   {t("experience.p1")}{" "}
-                  <span
-                    onClick={() =>
-                      window.open("https://stellar-mochi-ae943c.netlify.app/")
-                    }
+                  <a
+                    href="https://stellar-mochi-ae943c.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="relative dark:text-exph1-default text-h1lg dark:hover:text-btnNav-default hover:text-h1lg-hover font-bold transition-opacity cursor-pointer group"
                   >
-                    Pet Veterinary
+                    Pet Veterinarian
                     <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-h1lg-hover transition-all duration-300 group-hover:w-full"></span>
-                  </span>
+                  </a>
                   {t("experience.p1_2")}
-                  <div className="flex gap-3">
-                    <SiNextdotjs className="text-xl mt-2 dark:text-white" />
-                    <SiVite className="text-xl mt-2 text-techColors-vite" />
-                    <SiZod className="text-xl mt-2 text-techColors-css" />
-                    <SiRedux className="text-xl mt-2 text-indigo-600" />
-                  </div>
                 </p>
+                <div className="flex gap-3">
+                  <SiNextdotjs className="text-xl mt-2 dark:text-white" />
+                  <SiVite className="text-xl mt-2 text-techColors-vite" />
+                  <SiZod className="text-xl mt-2 text-techColors-css" />
+                  <SiRedux className="text-xl mt-2 text-indigo-600" />
+                </div>
               </div>
             </div>
           </section>
 
           <section id="projects">
             <div className=" bg-transparent ">
-              <main className="">
-                <div className="container px-4 py-1 max-w-6xl">
-                  <section>
-                    <h1 className="font-bold font-second dark:text-btnNav-default text-3xl  text-h1lg text-center mb-12">
-                      {t("projects.title")}
-                    </h1>
-                    <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-8">
-                      {projects.map((project, index) => (
-                        <ProjectCard
-                          key={index}
-                          image={project.image}
-                          title={project.title}
-                          description={project.description}
-                          technologies={project.technologies}
-                          liveLink={project.liveLink}
-                          repoLink={project.repoLink}
-                        />
-                      ))}
-                    </div>
-                  </section>
+              <div className="container px-4 py-1 max-w-6xl">
+                <h2 className="font-bold font-second dark:text-btnNav-default text-3xl  text-h1lg text-center mb-12">
+                  {t("projects.title")}
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-8">
+                  {projects.map((project) => (
+                    <ProjectCard
+                      key={project.title}
+                      image={project.image}
+                      title={project.title}
+                      description={t(project.descriptionKey)}
+                      technologies={project.technologies}
+                      liveLink={project.liveLink}
+                      repoLink={project.repoLink}
+                    />
+                  ))}
                 </div>
-              </main>
+              </div>
             </div>
           </section>
 
           <div className="mt-16 text-center" id="contact">
             <section className="text-end py-12">
-              <span
-                onClick={() => window.open("mailto:rodriguesluis414@gmail.com")}
+              <a
+                href="mailto:rodriguesluis414@gmail.com"
                 className="relative dark:text-btnNav-default text-black  dark:hover:text-btnNav-default font-sm font-second font-medium mr-5  cursor-pointer group"
               >
                 {t("contact.label")}
                 <span className="absolute left-0 bottom-0 h-0.5 w-0 dark:bg-btnNav-hover bg-black transition-all duration-300 group-hover:w-full"></span>
-              </span>{" "}
+              </a>{" "}
             </section>
           </div>
         </div>

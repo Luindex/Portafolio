@@ -1,4 +1,4 @@
-import React from "react"
+import PropTypes from "prop-types"
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa"
 
 const ProjectCard = ({
@@ -37,21 +37,34 @@ const ProjectCard = ({
           href={repoLink}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Source code of ${title}`}
           className="flex items-center gap-2 text-sm text-teal-400 hover:underline"
         >
           <FaGithub className=" dark:text-gray-100  dark:hover:text-gray-200 text-black hover:text-gray-700 transition-transform text-xl transform hover:scale-125 " />
         </a>
-        <a
-          href={liveLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm text-teal-400 hover:underline"
-        >
-          <FaExternalLinkAlt className="dark:text-gray-100  dark:hover:text-gray-200 text-black hover:text-gray-700 transition-transform text-lg transform hover:scale-125 " />
-        </a>
+        {liveLink && (
+          <a
+            href={liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Live demo of ${title}`}
+            className="flex items-center gap-2 text-sm text-teal-400 hover:underline"
+          >
+            <FaExternalLinkAlt className="dark:text-gray-100  dark:hover:text-gray-200 text-black hover:text-gray-700 transition-transform text-lg transform hover:scale-125 " />
+          </a>
+        )}
       </div>
     </div>
   )
+}
+
+ProjectCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  technologies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  liveLink: PropTypes.string,
+  repoLink: PropTypes.string.isRequired,
 }
 
 export default ProjectCard
