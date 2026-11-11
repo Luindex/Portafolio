@@ -1,8 +1,17 @@
-# React + Vite
+### Luis Carlos Rodriguez
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Desarrollador frontend y móvil en Medellín. Construyo y mantengo
+aplicaciones en producción.
 
-Currently, two official plugins are available:
+**Móvil:** React Native (Expo), TypeScript, NativeWind
+**Web:** React, Next.js (App Router), TypeScript, Tailwind CSS, MUI
+**Estado y datos:** Redux Toolkit, TanStack Query, APIs REST
+**Auth:** Azure AD / MSAL (OAuth 2.0, OpenID Connect)
+**Calidad:** React Testing Library, ESLint, CI/CD en Azure DevOps
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Hoy trabajo en una app de salud publicada en Android e iOS y en un
+portal corporativo en Next.js, compartiendo librería de componentes
+entre las tres plataformas.
+
+[Portafolio](https://portafolio-wheat-omega.vercel.app) ·
+[LinkedIn](https://linkedin.com/in/luis-carlos-rodriguez-111163252)
